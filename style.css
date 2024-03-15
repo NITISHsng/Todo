@@ -1,0 +1,63 @@
+body{
+margin:0;
+padding:0;
+background-color:rgb(4,29,29);
+}
+.container{
+margin:20px;
+padding:5px;
+text-align:center;
+background-color:#fff;
+}
+input{
+ width:80%;
+ height:30px;
+ background-color:Rgb(50,60,60);
+ color:white;
+}
+#add{
+height:35px;
+}
+.text{
+ position:relative;
+ text-align:left;
+ font-size:20px;
+ outline:none;
+ border: none;
+ max-width: 800px;
+ margin :auto;
+ margin-top: 20px;
+}
+.text div{
+padding:10px;
+outline:none;
+color:white;
+ background-color:rgb(50,60,60);
+border:2px solid rgb(50,80,60);
+overflow:auto;
+}
+.text div i{
+ position:absolute;
+ right:10px;
+}
+.text div input{
+ position:absolute;
+ right:-25%;
+ height:20px;
+}
+sub{
+ font-size:10px;
+}
+.ncs{
+color: rgb(150,00,00);
+}
+#dlt-all-tusk{
+  margin-top:5px;
+  padding: 5px;
+  color:red;
+  width: 100%;
+   max-width: 800px;
+  font-weight: 700;
+  font-size: 16px;
+  background-color:rgb(50,60,60);
+}
