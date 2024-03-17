@@ -1,11 +1,11 @@
 let inputs = document.getElementById("inp");
 let text = document.querySelector(".text");
-var tusk = [];
-var storedTusk = localStorage.getItem('tusk');
-if (storedTusk) {
-    tusk = JSON.parse(storedTusk);
+var task = [];
+var storedTask = localStorage.getItem('task');
+if (storedTask) {
+    task = JSON.parse(storedTask);
 }
-for (var i = 0; i < tusk.length; i++) {
+for (var i = 0; i < task.length; i++) {
     let ele = document.createElement("div");
     ele.innerHTML = `<span>${tusk[i]}</span> <input type="checkbox" value="yes"><i class="material-icons delete-btn">delete</i>`;
     text.appendChild(ele);
@@ -15,10 +15,10 @@ for (var i = 0; i < tusk.length; i++) {
 
 document.getElementById("add").onclick = function () {
     if (inputs.value == "") {
-        alert("Enter your tusk");
+        alert("Enter your task");
     } else {
         tusk.unshift(inputs.value); 
-        localStorage.setItem('tusk', JSON.stringify(tusk)); 
+        localStorage.setItem('task', JSON.stringify(task)); 
         var ele = document.createElement("div");
         ele.innerHTML = `<span>${inputs.value}</span> <input type="checkbox" value="yes"> <i class="material-icons delete-btn">delete</i>`;
         let firstChild = text.firstChild; 
@@ -28,7 +28,7 @@ document.getElementById("add").onclick = function () {
         ele.querySelector(".delete-btn").addEventListener("click", remove);
     }
 }
-document.getElementById("dlt-all-tusk").onclick = function () {
+document.getElementById("dlt-all-task").onclick = function () {
   if (confirm("Are you sure you want to delete all your task?")) {
         localStorage.clear();
         text.innerHTML='';
@@ -40,7 +40,7 @@ function remove() {
     if (confirm("Are you sure you want to delete your task?")) {
         let index = Array.from(ele.parentNode.children).indexOf(ele); 
         tusk.splice(index, 1); 
-        localStorage.setItem('tusk', JSON.stringify(tusk)); 
+        localStorage.setItem('tusk', JSON.stringify(task)); 
         ele.remove(); 
     }
 }
