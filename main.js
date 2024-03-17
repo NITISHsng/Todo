@@ -17,7 +17,7 @@ document.getElementById("add").onclick = function () {
     if (inputs.value == "") {
         alert("Enter your task");
     } else {
-        tusk.unshift(inputs.value); 
+        task.unshift(inputs.value); 
         localStorage.setItem('task', JSON.stringify(task)); 
         var ele = document.createElement("div");
         ele.innerHTML = `<span>${inputs.value}</span> <input type="checkbox" value="yes"> <i class="material-icons delete-btn">delete</i>`;
