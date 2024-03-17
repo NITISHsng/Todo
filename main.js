@@ -6,6 +6,7 @@ if (storedTask) {
     task = JSON.parse(storedTask);
 }
 for (var i = 0; i < task.length; i++) {
+    document.getElementById("dlt-all-task").style.display='block'; 
     let ele = document.createElement("div");
     ele.innerHTML = `<span>${task[i]}</span> <input type="checkbox" value="yes"><i class="material-icons delete-btn">delete</i>`;
     text.appendChild(ele);
@@ -17,6 +18,7 @@ document.getElementById("add").onclick = function () {
     if (inputs.value == "") {
         alert("Enter your task");
     } else {
+        document.getElementById("dlt-all-task").style.display='block'; 
         task.unshift(inputs.value); 
         localStorage.setItem('task', JSON.stringify(task)); 
         var ele = document.createElement("div");
@@ -32,6 +34,7 @@ document.getElementById("dlt-all-task").onclick = function () {
   if (confirm("Are you sure you want to delete all your task?")) {
         localStorage.clear();
         text.innerHTML='';
+        document.getElementById("dlt-all-task").style.display='none'; 
     }
 }
 
