@@ -7,7 +7,7 @@ if (storedTask) {
 }
 for (var i = 0; i < task.length; i++) {
     let ele = document.createElement("div");
-    ele.innerHTML = `<span>${tusk[i]}</span> <input type="checkbox" value="yes"><i class="material-icons delete-btn">delete</i>`;
+    ele.innerHTML = `<span>${task[i]}</span> <input type="checkbox" value="yes"><i class="material-icons delete-btn">delete</i>`;
     text.appendChild(ele);
     ele.querySelector("input").addEventListener("click", strike);
     ele.querySelector(".delete-btn").addEventListener("click", remove);
@@ -40,7 +40,7 @@ function remove() {
     if (confirm("Are you sure you want to delete your task?")) {
         let index = Array.from(ele.parentNode.children).indexOf(ele); 
         tusk.splice(index, 1); 
-        localStorage.setItem('tusk', JSON.stringify(task)); 
+        localStorage.setItem('task', JSON.stringify(task)); 
         ele.remove(); 
     }
 }
