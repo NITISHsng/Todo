@@ -8,7 +8,12 @@ if (storedTask) {
 for (var i = 0; i < task.length; i++) {
     document.getElementById("dlt-all-task").style.display='block'; 
     let ele = document.createElement("div");
-    ele.innerHTML = `<span>${task[i]}</span> <input type="checkbox" value="yes"><i class="material-icons delete-btn">delete</i>`;
+    ele.innerHTML = `<span>${task[i].text}</span> <input type="checkbox" ${task[i].checked ? "checked" : ""}> <i class="material-icons delete-btn">delete</i>`;
+    if (task[i].checked) {
+        ele.querySelector("span").style.textDecoration = "line-through";
+        ele.querySelector("span").style.textDecorationColor = "red";
+        ele.querySelector("span").style.color = "green";
+    }
     text.appendChild(ele);
     ele.querySelector("input").addEventListener("click", strike);
     ele.querySelector(".delete-btn").addEventListener("click", remove);
@@ -49,13 +54,18 @@ function remove() {
 }
 function strike() {
     let ele = this.parentNode;
+    let index = Array.from(ele.parentNode.children).indexOf(ele);
     if (this.checked) {
         ele.querySelector("span").style.textDecoration = "line-through";
         ele.querySelector("span").style.textDecorationColor = "red";
         ele.querySelector("span").style.color = "green";
+        task[index] = { text: task[index].text, checked: true };
     } else {
         ele.querySelector("span").style.textDecoration = "none";
         ele.querySelector("span").style.color ="white";
+        task[index] = { text: task[index].text, checked: false };
     }
+    localStorage.setItem('task', JSON.stringify(task));
 }
+
 
