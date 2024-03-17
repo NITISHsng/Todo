@@ -39,7 +39,7 @@ function remove() {
     let ele = this.parentNode;
     if (confirm("Are you sure you want to delete your task?")) {
         let index = Array.from(ele.parentNode.children).indexOf(ele); 
-        tusk.splice(index, 1); 
+        task.splice(index, 1); 
         localStorage.setItem('task', JSON.stringify(task)); 
         ele.remove(); 
     }
