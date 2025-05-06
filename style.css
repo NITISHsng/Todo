@@ -10,7 +10,9 @@ margin:20px;
 padding:5px;
 text-align:center;
 background-color:#fff;
- max-width:1000px;
+ max-width:1000px; 
+min-width:350px;
+ width:100%;
 }
 input{
  width:80%;
